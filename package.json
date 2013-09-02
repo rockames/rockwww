@@ -1,8 +1,10 @@
 {
-  "name": "node-example",
+  "name": "rockames",
   "version": "0.0.1",
   "dependencies": {
-    "express": "2.5.x"
+    "express": ">= 3.0.0rc5",
+    "jade": ">= 0.20.3",
+    "poet": "1.0.0rc1"
   },
   "engines": {
     "node": "0.8.x",

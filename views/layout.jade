@@ -1,0 +1,27 @@
+!!!
+html
+  head
+    title= 'The Rock - Ames, IA'
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/css/bootstrap2.css')
+    link(rel='stylesheet', href='/css/my.css')
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a(href='/').brand The Rock
+          ul.nav
+            li.active 
+              a(href='/') Home
+            li  
+              a(href='/about') About
+            li  
+              a(href='/contact') Contact
+            li
+              a(href='/blog') Blog
+    .wrap
+      .container
+        .row
+          .span8
+            block content
+
