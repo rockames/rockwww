@@ -3,25 +3,45 @@ html
   head
     title= 'The Rock - Ames, IA'
     meta(charset='utf-8')
-    link(rel='stylesheet', href='/css/bootstrap2.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='//d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css')
     link(rel='stylesheet', href='/css/my.css')
+    script(src='//d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+    script(src='//d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js')
   body
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
+          a(data-toggle='collapse',data-target='.nav-collapse').btn.btn-navbar
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
           a(href='/').brand The Rock
-          ul.nav
-            li.active 
-              a(href='/') Home
-            li  
-              a(href='/about') About
-            li  
-              a(href='/contact') Contact
-            li
-              a(href='/blog') Blog
-    .wrap
+          .nav-collapse.collapse
+            ul.nav
+              - var obj = { 'index':'Home', 'about':'About', 'contact':'Contact', 'blog':'Blog' }
+                - each val, key in obj
+                  - if (id == key)
+                    li.active
+                      a(href='#{key}') #{val}
+                  - else            
+                    li
+                      a(href='#{key}') #{val}
+    .container
+      .row-fluid.heading
+        .span12
+          block heading
+      .row-fluid.subheading
+        .span12
+          block subheading
+      .row-fluid
+        .span12
+          block content
+
+    .footer
       .container
-        .row
-          .span8
-            block content
+        .span
+          include includes/about
+        .clear
 

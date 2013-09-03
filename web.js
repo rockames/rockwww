@@ -20,26 +20,39 @@ app.use(app.router);
 app.use( notFoundFn );
 
 app.get('/', function (req, res) { 
-  res.render('index');
+  res.render('index', {
+    title: 'Home',
+    id: 'index'
+  });
+});
+
+app.get('/index', function (req, res) { 
+  res.render('index', {
+    title: 'Home',
+    id: 'index'
+  });
 });
 
 app.get('/about', function (req, res) {
   res.render('about', {
-    title: 'About'
+    title: 'About',
+    id: 'about'
   });
 });
 
 
 app.get('/contact', function (req, res) {
   res.render('contact', {
-    title: 'Contact'
+    title: 'Contact',
+    id: 'contact'
   });
 });
 
 
 app.get('/blog', function (req, res) {
   res.render('blog', {
-    title: 'Blog'
+    title: 'Blog',
+    id: 'blog'
   });
 });
 
