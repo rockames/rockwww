@@ -17,6 +17,7 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.use(app.router);
+app.use( notFoundFn );
 
 app.get('/', function (req, res) { 
   res.render('index');
@@ -41,6 +42,14 @@ app.get('/blog', function (req, res) {
     title: 'Blog'
   });
 });
+
+function notFoundFn ( req, res ) {
+  if ( req.accepts( 'html' )) {
+    res.status( 404 );
+    res.render( '404', { url: req.url });
+    return;
+  }
+}
 
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
