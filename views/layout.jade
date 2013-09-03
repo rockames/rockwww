@@ -10,38 +10,37 @@ html
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
     script(src='//d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js')
   body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          a(data-toggle='collapse',data-target='.nav-collapse').btn.btn-navbar
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a(href='/').brand The Rock
-          .nav-collapse.collapse
-            ul.nav
-              - var obj = { 'index':'Home', 'about':'About', 'contact':'Contact', 'blog':'Blog' }
-                - each val, key in obj
-                  - if (id == key)
-                    li.active
-                      a(href='#{key}') #{val}
-                  - else            
-                    li
-                      a(href='#{key}') #{val}
-    .container
-      .row-fluid.heading
-        .span12
-          block heading
-      .row-fluid.subheading
-        .span12
-          block subheading
-      .row-fluid
-        .span12
-          block content
-
-    .footer
+    #wrap
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            a(data-toggle='collapse',data-target='.nav-collapse').btn.btn-navbar
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a(href='/').brand The Rock
+            .nav-collapse.collapse
+              ul.nav
+                - var obj = { 'index':'Home', 'about':'About', 'contact':'Contact', 'blog':'Blog' }
+                  - each val, key in obj
+                    - if (id == key)
+                      li.active
+                        a(href='#{key}') #{val}
+                    - else            
+                      li
+                        a(href='#{key}') #{val}
       .container
-        .span
-          include includes/about
-        .clear
+        .row-fluid.heading
+          .span12
+            block heading
+        .row-fluid.subheading
+          .span12
+            block subheading
+        .row-fluid
+          .span12
+            block content
+        #push
+    #footer
+      .container
+        include includes/about
 
