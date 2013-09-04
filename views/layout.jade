@@ -30,15 +30,11 @@ html
                       li
                         a(href='#{key}') #{val}
       .container
-        .row-fluid.heading
-          .span12
-            block heading
-        .row-fluid.subheading
-          .span12
-            block subheading
         .row-fluid
-          .span12
+          .span8
             block content
+          .span4
+            include includes/calendar
         #push
     #footer
       .container
