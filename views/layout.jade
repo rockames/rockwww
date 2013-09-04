@@ -4,38 +4,36 @@ html
     title= 'The Rock - Ames, IA'
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet', href='//d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css')
-    link(rel='stylesheet', href='/css/my.css')
-    script(src='//d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js')
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
-    script(src='//d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='/js/jquery.js')
+    script(src='/js/bootstrap.min.js')
   body
     #wrap
-      .navbar.navbar-fixed-top
-        .navbar-inner
-          .container
-            a(data-toggle='collapse',data-target='.nav-collapse').btn.btn-navbar
+      .navbar.navbar-default.navbar-inverse
+        .container
+          .navbar-header
+            a(data-toggle='collapse',data-target='.navbar-collapse').btn.navbar-toggle
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a(href='/').brand The Rock
-            .nav-collapse.collapse
-              ul.nav
-                - var obj = { 'index':'Home', 'about':'About', 'contact':'Contact', 'blog':'Blog' }
-                  - each val, key in obj
-                    - if (id == key)
-                      li.active
-                        a(href='#{key}') #{val}
-                    - else            
-                      li
-                        a(href='#{key}') #{val}
+            a(href='/').navbar-brand The Rock
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav
+              - var obj = { 'index':'Home', 'about':'About', 'contact':'Contact', 'blog':'Blog' }
+                - each val, key in obj
+                  - if (id == key)
+                    li.active
+                      a(href='#{key}') #{val}
+                  - else            
+                    li
+                      a(href='#{key}') #{val}
       .container
-        .row-fluid
-          .span8
+        .row
+          .col-lg-8
             block content
-          .span4
+          .col-lg-4
             include includes/calendar
-        #push
     #footer
       .container
         include includes/about
