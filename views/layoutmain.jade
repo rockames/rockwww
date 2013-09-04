@@ -40,25 +40,33 @@ html
             .container
               .carousel-caption
                 h1 Friday Night Rock
-                p Join us for our monthly large group gatherings, the second Friday of every month.
-                p Next meeting: Friday, September 13th, 7:30pm at Zeke's.
+                p 
+                  | Join us for our monthly large group gatherings, the second Friday of every month.
+                  | Next meeting: Friday, September 13th, 7:30pm at Zeke's.
                 a(href='#').btn.btn-large.btn-primary More Info
           .item
-            img(src="img/slide-02.jpg")
+            img(src="img/tomshort.jpg")
             .container
               .carousel-caption
-                h1 Headline2, yo!
-                p Some more information
+                h1 Tom Short on Campus
+                p 
+                  | Tom Short is on campus September 3rd-6th.
+                  | Catch him in front of the Hub from 10am-4pm,
+                  | or at Zeke's at 7:30pm Tuesday-Thursday.
+                a(href='http://www.tomthepreacher.com').btn.btn-large.btn-primary More about Tom
           .item
-            img(src="img/slide-03.jpg")
+            img(src="img/focus.jpg")
             .container
               .carousel-caption
-                h1 Headline3, yo!
-                p Some more really excellent information
+                h1 Fall Conference
+                p
+                  | The Fall Conference is coming up on September 20th-22nd.
+                  | Sign up today!
+                a(href='http://www.fallconferencedm.com').btn.btn-large.btn-primary Registration
         a(data-slide='prev',href='#myCarousel').left.carousel-control
-          span.glyphicon.glyphicon-chevron-left
+          span.icon-prev
         a(data-slide='next',href='#myCarousel').right.carousel-control
-          span.glyphicon.glyphicon-chevron-right
+          span.icon-next
       .container.marketing
         .row
           .col-lg-4
@@ -67,8 +75,14 @@ html
             h3 Twitter
             p Put twitter here?
           .col-lg-4
-            h3 Blog
-            p Put most recent blog post here? 
+            h3 Recent Blog Entries
+             - var posts = getPosts(0,3)
+             - var page = 1
+             - each post in posts
+               p
+                 a(href=post.url)
+                   = post.title 
+                 span.date     #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
     #footer
       .container
         include includes/about
