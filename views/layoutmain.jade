@@ -1,0 +1,75 @@
+!!!
+html
+  head
+    title= 'The Rock - Ames, IA'
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='/js/jquery.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/holder.js')
+  body
+    #wrap
+      .navbar.navbar-default.navbar-inverse
+        .container
+          .navbar-header
+            a(data-toggle='collapse',data-target='.navbar-collapse').btn.navbar-toggle
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a(href='/').navbar-brand The Rock
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav
+              - var obj = { 'index':'Home', 'about':'About', 'contact':'Contact', 'blog':'Blog' }
+                - each val, key in obj
+                  - if (id == key)
+                    li.active
+                      a(href='#{key}') #{val}
+                  - else
+                    li
+                      a(href='#{key}') #{val}
+      #myCarousel.carousel.slide
+        ol.carousel-indicators
+          li(data-target='#myCarousel',data-slide-to='0').active
+          li(data-target='#myCarousel',data-slide-to='1')
+          li(data-target='#myCarousel',data-slide-to='2')
+        .carousel-inner
+          .item.active
+            img(src="img/zekes.jpg")
+            .container
+              .carousel-caption
+                h1 Friday Night Rock
+                p Join us for our monthly large group gatherings, the second Friday of every month.
+                p Next meeting: Friday, September 13th, 7:30pm at Zeke's.
+                a(href='#').btn.btn-large.btn-primary More Info
+          .item
+            img(src="img/slide-02.jpg")
+            .container
+              .carousel-caption
+                h1 Headline2, yo!
+                p Some more information
+          .item
+            img(src="img/slide-03.jpg")
+            .container
+              .carousel-caption
+                h1 Headline3, yo!
+                p Some more really excellent information
+        a(data-slide='prev',href='#myCarousel').left.carousel-control
+          span.glyphicon.glyphicon-chevron-left
+        a(data-slide='next',href='#myCarousel').right.carousel-control
+          span.glyphicon.glyphicon-chevron-right
+      .container.marketing
+        .row
+          .col-lg-4
+            include includes/calendar
+          .col-lg-4
+            h3 Twitter
+            p Put twitter here?
+          .col-lg-4
+            h3 Blog
+            p Put most recent blog post here? 
+    #footer
+      .container
+        include includes/about
+
