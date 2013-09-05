@@ -6,6 +6,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.min.js')
   body
@@ -24,16 +25,16 @@ html
                 - each val, key in obj
                   - if (id == key)
                     li.active
-                      a(href='#{key}') #{val}
+                      a(href='/#{key}') #{val}
                   - else            
                     li
-                      a(href='#{key}') #{val}
+                      a(href='/#{key}') #{val}
       .container
         .row
           .col-md-8
             block content
           .col-md-4
-            include includes/calendar
+            block sidebar
     #footer
       .container
         include includes/about
