@@ -41,10 +41,10 @@ app.get('/about', function (req, res) {
 });
 
 
-app.get('/contact', function (req, res) {
-  res.render('contact', {
-    title: 'Contact',
-    id: 'contact'
+app.get('/connect', function (req, res) {
+  res.render('connect', {
+    title: 'Connect',
+    id: 'connect'
   });
 });
 
