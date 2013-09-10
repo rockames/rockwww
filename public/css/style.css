@@ -39,7 +39,6 @@ body {
 }
 
 
-
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -47,6 +46,14 @@ body {
 .navbar-wrapper {
   position: relative;
   z-index: 15;
+}
+
+/* Make navbar brand not resize with image */
+.navbar-brand {
+    max-height: 100%;
+    overflow: visible;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 
@@ -77,6 +84,7 @@ body {
   left: 0;
   min-width: 100%;
   height: 500px;
+  max-width: none;
 }
 
 

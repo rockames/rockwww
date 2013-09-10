@@ -3,7 +3,8 @@ html
   head
     title= 'The Rock - Ames, IA'
     meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='viewport', content='width=device-width, initial-scale=0.0')
+    link(rel='shortcut icon', href='/img/logosm.png')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css')
@@ -19,7 +20,9 @@ html
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a(href='/').navbar-brand The Rock
+            a(href='/').navbar-brand
+              img(src='/img/logosm.png')
+              |   The Rock
           .navbar-collapse.collapse
             ul.nav.navbar-nav
               - var obj = { 'index':'Home', 'about':'About', 'connect':'Connect', 'blog':'Blog' }
@@ -46,15 +49,13 @@ html
                   | Next meeting: Friday, September 13th, 7:30pm at Zeke's.
                 a(href='#').btn.btn-large.btn-primary More Info
           .item
-            img(src="img/tomshort.jpg")
+            img(src="img/fw.png")
             .container
               .carousel-caption
-                h1 Tom Short on Campus
+                h1 Faithwalkers 2013
                 p 
-                  | Tom Short is on campus September 3rd-6th.
-                  | Catch him in front of the Hub from 10am-4pm,
-                  | or at Zeke's at 7:30pm Tuesday-Thursday.
-                a(href='http://www.tomthepreacher.com').btn.btn-large.btn-primary More about Tom
+                  |  Faithwalkers is coming December 27-30th, 2013 in Des Moines, IA.
+                a(href='http://www.gccweb.org/conferences/faithwalkers').btn.btn-large.btn-primary Registration
           .item
             img(src="img/focus.jpg")
             .container
