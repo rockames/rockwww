@@ -10,18 +10,6 @@ html
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.min.js')
-    script(src="//maps.googleapis.com/maps/api/js?key=AIzaSyDQRhA2ClBtshW6KqyoU423e0tWfO4NrIo&sensor=false")
-    script.
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
   body
     #wrap
       .navbar.navbar-default.navbar-inverse
